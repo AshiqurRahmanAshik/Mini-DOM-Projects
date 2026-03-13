@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Counter</title>
+    <style>
+      body {
+        text-align: center;
+        font-size: 60px;
+      }
+      button {
+        display: inline-block;
+        padding: 30px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="number">0</p>
+    <button id="plusButton">+</button>
+    <button id="minusButton">-</button>
+  </body>
+  <script>
+    let sum = 0;
+    document
+      .getElementById("plusButton")
+      .addEventListener("click", function () {
+        sum = sum + 1;
+        const number = document.getElementById("number");
+        number.innerText = sum;
+        if (sum === 20) {
+          const plusButton = document.getElementById("plusButton");
+          plusButton.setAttribute("disabled", true);
+        }
+      });
+    document
+      .getElementById("minusButton")
+      .addEventListener("click", function () {
+        sum = sum - 1;
+        const number = document.getElementById("number");
+        number.innerText = sum;
+        if (sum === 0) {
+          const plusButton = document.getElementById("minusButton");
+          minusButton.setAttribute("disabled", true);
+        }
+      });
+  </script>
+</html>

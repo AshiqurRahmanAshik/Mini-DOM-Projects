@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Counter</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      #colorBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        margin: 0 auto;
+      }
+      button {
+        display: inline-block;
+        padding: 10px;
+        font-size: 20px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RGB Color Generator</h1>
+    <div id="colorBox"></div>
+    <button id="newColor">Generate New Color</button>
+    <br />
+    <p id="colorCode"></p>
+  </body>
+  <script>
+    const generateNewColorBtn = document.getElementById("newColor");
+    generateNewColorBtn.addEventListener("click", function () {
+      const colorCode = document.getElementById("colorCode");
+      const red = Math.floor(Math.random() * 255);
+      const blue = Math.floor(Math.random() * 255);
+      const green = Math.floor(Math.random() * 255);
+      const rgbCode = (colorCode.innerText = `rgb(${red},${green},${blue})`);
+      const colorBox = document.getElementById("colorBox");
+      colorBox.style.backgroundColor = rgbCode;
+    });
+  </script>
+</html>
